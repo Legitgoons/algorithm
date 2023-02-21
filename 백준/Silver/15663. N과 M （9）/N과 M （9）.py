@@ -4,7 +4,7 @@ arr2 = []
 visited = [False]*n #방문 확인용 visited
 
 def dfs(depth,ans,arr) :
-    if (len(ans) == m) : #ans길이가 m과 같다면
+    if (len(ans) == m) : #ans길이가 m과 같고 arr2에 없다면
         print(*ans) #출력
         return 
     
