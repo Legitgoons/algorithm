@@ -38,14 +38,15 @@ public class Main {
 		for (int i = 0; i < E; i++) {
 			int px = findset(edges[i][0]);
 			int py = findset(edges[i][1]);
-
+            
+            if (pick == V-2) // 분할할거니까 선택된 길 중에서 가장 큰 길을 빼줌
+				break;
+            
 			if (px != py) { // 부모가 다르다면 = 사이클이 발생하지 않는다면
 				union(px, py); // union으로 합쳐줌
 				ans += edges[i][2];
 				pick++;
 			}
-			if (pick == V-2) // 분할할거니까 선택된 길 중에서 가장 큰 길을 빼줌
-				break;
 		}
 		System.out.println(ans);
 	}
